@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body style="background: #008b6f">
+<h1 style="text-align: center;
+    display: block;
+    margin: 0 auto;">Completed Projects</h1>
+
+<ul style="
+    display: table;
+    margin: 0 auto;">
+        <th:block th:each="completed : ${completed}">
+            <li th:text="${completed}"></li>
+        </th:block>
+</ul>
+
+<h1 style="text-align: center;
+    display: block;
+    margin: 0 auto;">Incomplete Projects</h1>
+<ul style="
+           display: table;
+           margin: 0 auto;">
+    <th:block th:each="notCompleted : ${notCompleted}">
+        <li th:text="${notCompleted}"></li>
+    </th:block>
+</ul>
+</body>
+</html>

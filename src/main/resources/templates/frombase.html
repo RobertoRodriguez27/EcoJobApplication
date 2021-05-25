@@ -1,0 +1,38 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head>
+    <title>Spring Application</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<!--    <link rel="stylesheet" th:href="@{frombase.css}">-->
+</head>
+<body style="background: darkcyan">
+<h1 style="text-align: center;
+    display: block;
+    margin: 0 auto;">
+
+    All <th th:text="${title}"></th>
+</h1>
+
+<ul style="
+           display: table;
+           margin: 0 auto;">
+
+    <th:block th:if = '${title.equals("Teams")}'>
+        <th:block th:each="team : ${teams}">
+            <li th:text="${team}"></li>
+        </th:block>
+    </th:block>
+
+
+
+    <th:block th:if = '${title.equals("Projects")}'>
+        <th:block th:each="project : ${projects}">
+            <li th:text="${project}"></li>
+        </th:block>
+    </th:block>
+
+</ul>
+
+
+</body>
+</html>
